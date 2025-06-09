@@ -28,25 +28,27 @@
     flex-direction: column;
     gap: 1rem;
     align-items: center;
+    width: fo;
+    
   }
-  
+  @media (max-width: 350px) {
+    .contact-info{
+     width: fit-content;
+    }
   .contact-item {
     text-decoration: none;
     color: #1f2937;
     font-weight: 500;
-    font-size: 1.1rem;
     display: flex;
     align-items: center;
     gap: 0.5rem;
     transition: color 0.3s;
   }
-  
   .contact-item:hover {
     color: #3b82f6;
   }
-  
   .contact-icon {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     color: #3b82f6;
   }
   

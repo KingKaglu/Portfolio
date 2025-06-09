@@ -1,0 +1,120 @@
+/* Main container */
+
+.book-manager {
+    min-height: 100vh;
+    padding: 2rem;
+    background: linear-gradient(to bottom right, #e8f0ff, #ffffff);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Segoe UI', sans-serif;
+   
+  }
+  
+  /* Heading */
+  .book-manager h1 {
+    font-size: 2.2rem;
+    margin-bottom: 2rem;
+    color: #2c3e50;
+  }
+  
+  /* Form styling */
+  .book-form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 1.5rem;
+    width: 100%;
+    max-width: 400px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  }
+  
+  .book-form input,
+  .book-form select,
+  .book-form textarea,
+  .book-form button {
+    padding: 0.7rem;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    transition: all 0.2s ease;
+  }
+  
+  .book-form input:focus,
+  .book-form select:focus,
+  .book-form textarea:focus {
+    border-color: #4CAF50;
+    outline: none;
+  }
+  
+  .book-form button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+  }
+  
+  .book-form button:hover {
+    background-color: #45a049;
+  }
+  
+  /* Book list */
+  .book-list {
+    width: 100%;
+    max-width: 1000px;
+    margin-top: 2rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+  }
+  
+  /* Book card */
+  .book-card {
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 1rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    transition: transform 0.2s ease;
+  }
+  
+  .book-card:hover {
+    transform: translateY(-4px);
+  }
+  
+  .book-card h3 {
+    margin: 0 0 0.5rem;
+    color: #34495e;
+  }
+  
+  .book-card p {
+    margin: 0.3rem 0;
+    color: #555;
+  }
+  .buttons {
+    margin-top: 10px;
+    display: flex;
+    gap: 10px;
+  }
+  
+  .buttons button {
+    padding: 5px 10px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.9rem;
+  }
+  
+  .buttons button:first-child {
+    background-color: #2196f3;
+    color: white;
+  }
+  
+  .buttons button:last-child {
+    background-color: #f44336;
+    color: white;
+  }
+  
