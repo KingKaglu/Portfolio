@@ -1,20 +1,19 @@
 import React from 'react';
 import './hero.css';
-import myImg from '../assets/giorgigzirishvili.jpg'
-
+import myImg from '../assets/giorgigzirishvili.jpg';
 
 function Hero() {
   return (
     <section id="home" className="hero">
-      <div className="container">
-        <div className="content">
+      <div className="hero-container">
+        <div className="hero-content">
           <h1>Hi, I'm Your Giorgi!</h1>
           <h2>WEB DEVELOPER</h2>
           <p>
             I'm a passionate new web developer creating stunning, user-friendly websites.
-            With a keen eye for design, creating designs according to your need and I transform ideas into functional digital experiences.
+            With a keen eye for design, I transform ideas into functional digital experiences.
           </p>
-          <div className="buttons">
+          <div className="hero-buttons">
             <a href="#portfolio" className="project-button">
               Projects <i className="fas fa-arrow-right button-icon"></i>
             </a>
@@ -29,8 +28,8 @@ function Hero() {
           </div>
         </div>
 
-        <div className="image">
-          <img src={myImg} alt="Your Photo" className="hero-image" />
+        <div className="hero-image-wrapper">
+          <img src={myImg} alt="Giorgi Gzirishvili" className="hero-image" />
         </div>
       </div>
     </section>

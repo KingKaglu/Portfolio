@@ -11,7 +11,6 @@ function App() {
   return (
     <>
     <title>Giorgi Gzirishvili</title>
-    
       <Nav />
       <Hero />
       <About />
