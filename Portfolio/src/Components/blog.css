@@ -1,0 +1,73 @@
+/* Blog.css  ─ styles for the <Blog /> component  */
+#blog {
+    /* A soft-gradient header band */
+    background: radial-gradient(
+        circle at 15% 15%,
+        rgba(97, 218, 251, 0.15),
+        transparent 55%
+      ),
+      #f7f9fc;
+    padding: 4rem 1rem;
+    color: #2d3748;            /* Dark slate text for good contrast */
+    font-family: "Inter", "Segoe UI", Roboto, sans-serif;
+  }
+  
+  #blog .container {
+    max-width: 960px;
+    margin: 0 auto;
+  }
+  
+  #blog .content {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+  }
+  
+  #blog h1 {
+    font-size: clamp(2rem, 4.5vw, 3rem);
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 1rem;
+    color: #0b4b6e;            /* Subtle React-blue heading */
+  }
+  
+  /* --- Article cards --- */
+  #blog article {
+    background: #ffffff;
+    border-radius: 1rem;
+    padding: 2rem 1.75rem;
+    box-shadow: 0 10px 25px -8px rgba(0, 0, 0, 0.12);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+  }
+  
+  #blog article:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 14px 30px -6px rgba(0, 0, 0, 0.18);
+  }
+  
+  #blog article h3 {
+    margin-top: 0;
+    margin-bottom: 0.75rem;
+    font-size: 1.375rem;
+    line-height: 1.25;
+    color: #0f6ba8;
+  }
+  
+  #blog article p {
+    margin: 0;
+    line-height: 1.6;
+    font-size: 1rem;
+    letter-spacing: 0.01rem;
+  }
+  
+  /* --- Responsiveness — single tweak does the job --- */
+  @media (max-width: 600px) {
+    #blog {
+      padding: 3rem 1rem;
+    }
+  
+    #blog article {
+      padding: 1.5rem 1.25rem;
+    }
+  }
+  

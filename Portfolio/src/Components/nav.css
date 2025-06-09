@@ -1,0 +1,89 @@
+/* Nav.css */
+.nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 2rem;
+    background-color: #ffffff;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
+  
+  .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #1f2937;
+  }
+  
+  .menu {
+    display: flex;
+    list-style: none;
+    gap: 1.5rem;
+  }
+  
+  .menu li a {
+    text-decoration: none;
+    color: #475569;
+    font-weight: 500;
+    transition: color 0.3s;
+    font-size: 18px;
+  }
+  
+  .menu li a:hover {
+    color: #3b82f6;
+  }
+  
+  .cta-button {
+    background-color: #3b82f6;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background 0.3s;
+  }
+  
+  .cta-button:hover {
+    background-color: #2563eb;
+  }
+  
+  .hamburger {
+    display: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #475569;
+  }
+  
+  /* Responsive */
+  @media (max-width: 768px) {
+    .menu,
+    .cta-button {
+      display: none;
+    }
+  
+    .nav.active .menu {
+      display: flex;
+      flex-direction: column;
+      position: absolute;
+      top: 64px;
+      right: 0;
+      background-color: #ffffff;
+      width: 100%;
+      padding: 1rem 2rem;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      gap: 1rem;
+    }
+  
+    .nav.active .cta-button {
+      display: block;
+      margin-top: 0.5rem;
+      text-align: center;
+    }
+  
+    .hamburger {
+      display: block;
+    }
+  }
+  
