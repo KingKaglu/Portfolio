@@ -1,12 +1,20 @@
-.hero {
-  padding: 4rem 1.5rem;
-  background: linear-gradient(to bottom right, #f8fafc, #e2e8f0);
+/* hero.css */
+
+/* Base Styles */
+.hero-section {
+  padding: 6rem 2rem;
+  background: linear-gradient(135deg, #f0f4f8 0%, #d9e2ec 100%); /* Softer, modern gradient */
   min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
+  font-family: 'Inter', sans-serif; /* Modern font */
+  color: #2d3748;
+  overflow: hidden; /* To contain animations */
+  position: relative;
 }
 
+/* Container for content and image */
 .hero-container {
   display: flex;
   flex-direction: row;
@@ -15,117 +23,365 @@
   justify-content: space-between;
   max-width: 1200px;
   width: 100%;
-  gap: 2rem;
+  gap: 3rem; /* Increased gap */
+  position: relative;
+  z-index: 1; /* Ensure content is above any background elements */
 }
 
+/* Hero Content Area */
 .hero-content {
   flex: 1;
-  min-width: 280px;
+  min-width: 300px; /* Ensure content doesn't shrink too much */
+  text-align: left;
+  /* Animations */
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInRise 1s forwards cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 
-.hero-content h1 {
-  font-size: 2.8rem;
-  color: #1e293b;
+.intro-text {
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: #007bff; /* Blue for intro */
+  margin-bottom: 0.5rem;
+  animation: fadeInRise 0.8s forwards cubic-bezier(0.2, 0.8, 0.2, 1); /* Changed to fadeInRise for a subtle lift */
+  transition: all 0.3s ease-in-out; /* Added transition for hover */
 }
 
-.hero-content h2 {
-  font-size: 2rem;
-  color: #3b82f6;
-  margin-bottom: 1rem;
+.intro-text:hover {
+  transform: translateY(-3px); /* Subtle lift on hover */
+  color: #0056b3; /* Slightly darker blue on hover */
+  text-shadow: 0 5px 10px rgba(0,0,0,0.1); /* Soft shadow on hover */
 }
 
-.hero-content p {
-  font-size: 1.1rem;
-  color: #475569;
-  line-height: 1.6;
-  margin-bottom: 2rem;
+.hero-title {
+  font-size: clamp(3rem, 6vw, 5.5rem); /* Responsive font size */
+  font-weight: 900; /* Extra bold */
+  margin-bottom: 0.5rem;
+  color: #1a202c;
+  background: linear-gradient(45deg, #0a527c, #007bff); /* Darker blue gradient */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: slideInLeftBounce 1s forwards cubic-bezier(0.2, 0.8, 0.2, 1) 0.2s; /* New bounce animation */
+  line-height: 1.1;
+  transition: all 0.3s ease-in-out; /* Added transition for hover */
 }
 
+.hero-title:hover {
+  transform: translateY(-5px) scale(1.01); /* Lift and slight scale on hover */
+  text-shadow: 0 8px 20px rgba(0, 0, 0, 0.15); /* Prominent shadow for effect */
+}
+
+.hero-subtitle {
+  font-size: clamp(1.8rem, 4vw, 3rem); /* Responsive font size */
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  color: #4CAF50; /* Green for subtitle */
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  animation: slideInRightBounce 1s forwards cubic-bezier(0.2, 0.8, 0.2, 1) 0.4s; /* New bounce animation */
+  transition: all 0.3s ease-in-out; /* Added transition for hover */
+}
+
+.hero-subtitle:hover {
+  transform: translateY(-5px) scale(1.01); /* Lift and slight scale on hover */
+  color: #45a049; /* Slightly darker green on hover */
+  text-shadow: 0 8px 20px rgba(0, 0, 0, 0.1); /* Soft shadow for effect */
+}
+
+.hero-description {
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  line-height: 1.8;
+  color: #4a5568;
+  max-width: 600px;
+  margin-bottom: 2.5rem; /* More space below paragraph */
+  animation: fadeInRise 1s forwards cubic-bezier(0.2, 0.8, 0.2, 1) 0.6s; /* Changed to fadeInRise */
+  transition: all 0.3s ease-in-out; /* Added transition for hover */
+}
+
+.hero-description:hover {
+  transform: translateY(-3px); /* Subtle lift on hover */
+  text-shadow: 0 5px 10px rgba(0,0,0,0.08); /* Soft shadow on hover */
+}
+
+/* Buttons */
 .hero-buttons {
   display: flex;
   flex-wrap: wrap;
-  gap: 1rem;
-  margin-bottom: 1.5rem;
+  gap: 1.2rem; /* Increased gap between buttons */
+  margin-bottom: 2.5rem; /* More space below buttons */
+  animation: scaleIn 1s forwards cubic-bezier(0.2, 0.8, 0.2, 1) 0.8s; /* Changed to scaleIn */
 }
 
-.project-button,
-.hire-button {
-  padding: 0.75rem 1.5rem;
-  font-size: 1rem;
-  border-radius: 8px;
+.btn {
+  padding: 0.9rem 1.8rem; /* Larger buttons */
+  font-size: 1.05rem;
+  font-weight: 600;
+  border-radius: 50px; /* Pill shape */
   text-decoration: none;
-  transition: background 0.3s ease;
-  white-space: nowrap;
+  transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1); /* Smooth spring-like transition */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
-.project-button {
-  background-color: #3b82f6;
+.btn-primary {
+  background: linear-gradient(45deg, #007bff, #0a527c); /* Blue gradient */
   color: #ffffff;
 }
 
-.project-button:hover {
-  background-color: #2563eb;
+.btn-primary:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 123, 255, 0.4);
+  background: linear-gradient(45deg, #0a527c, #0056b3);
 }
 
-.hire-button {
-  background-color: #facc15;
-  color: #1f2937;
+.btn-secondary {
+  background-color: #4CAF50; /* Green color */
+  color: #ffffff;
+  border: 2px solid #4CAF50;
 }
 
-.hire-button:hover {
-  background-color: #eab308;
+.btn-secondary:hover {
+  background-color: #45a049;
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(76, 175, 80, 0.4);
 }
 
-.social {
+.btn-icon {
+  font-size: 1rem;
+}
+
+/* Social Links */
+.social-links {
   display: flex;
-  gap: 1rem;
-  margin-top: 1rem;
+  gap: 1.5rem; /* Increased gap */
+  margin-top: 1.5rem;
+  animation: scaleIn 1s forwards cubic-bezier(0.2, 0.8, 0.2, 1) 1s; /* Changed to scaleIn */
 }
 
 .social-icon {
-  font-size: 1.25rem;
-  color: #475569;
-  transition: color 0.3s;
+  font-size: 1.8rem; /* Larger icons */
+  color: #6c757d; /* Muted color */
+  transition: transform 0.3s cubic-bezier(0.2, 0.8, 0.2, 1), color 0.3s ease, filter 0.3s ease; /* Added filter to transition */
+  filter: drop-shadow(0 2px 5px rgba(0,0,0,0.1)); /* Subtle shadow */
 }
 
 .social-icon:hover {
-  color: #3b82f6;
+  color: #007bff; /* Blue on hover */
+  transform: translateY(-7px) scale(1.25); /* More pronounced lift and scale */
+  filter: drop-shadow(0 5px 10px rgba(0, 123, 255, 0.4));
 }
 
+/* Hero Image Wrapper */
 .hero-image-wrapper {
   flex: 1;
-  min-width: 250px;
-  text-align: center;
+  min-width: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  /* Animation */
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInRise 1s forwards cubic-bezier(0.2, 0.8, 0.2, 1);
+  animation-delay: 0.3s; /* Delay image animation slightly */
+}
+
+.hero-image-border {
+  border: 8px solid #ffffff; /* White border */
+  border-radius: 50%; /* Circular shape */
+  padding: 10px; /* Space between border and image */
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2); /* Stronger shadow for depth */
+  background: linear-gradient(45deg, #007bff, #4CAF50); /* Gradient border effect */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover effect */
 }
 
 .hero-image {
-  max-width: 100%;
+  max-width: 350px; /* Larger image size */
+  width: 100%;
   height: auto;
-  border-radius: 1rem;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border-radius: 50%; /* Circular image */
+  display: block;
+  object-fit: cover;
+  aspect-ratio: 1 / 1; /* Maintain aspect ratio */
+  filter: grayscale(0%) brightness(100%); /* Optional: adjust for color vibrancy */
+  transition: filter 0.5s ease;
 }
 
-/* Responsive styles */
+.hero-image:hover {
+  filter: grayscale(10%) brightness(105%);
+}
+
+/* New Animation for Hovered Image Wrapper */
+.hero-image-wrapper:hover .hero-image-border {
+  transform: scale(1.05); /* Slightly scale up */
+  box-shadow: 0 20px 50px rgba(0, 123, 255, 0.4); /* More prominent blue shadow */
+}
+
+.hero-image-wrapper:hover .hero-image {
+  filter: grayscale(0%) brightness(110%); /* Slightly brighten on hover */
+}
+
+/* Keyframe Animations */
+@keyframes fadeInRise {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInLeftBounce {
+  0% {
+    opacity: 0;
+    transform: translateX(-100px) scale(0.9);
+  }
+  60% {
+    opacity: 1;
+    transform: translateX(10px) scale(1.02); /* Slight overshoot */
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+}
+
+@keyframes slideInRightBounce {
+  0% {
+    opacity: 0;
+    transform: translateX(100px) scale(0.9);
+  }
+  60% {
+    opacity: 1;
+    transform: translateX(-10px) scale(1.02); /* Slight overshoot */
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Responsive Adjustments */
 @media (max-width: 992px) {
-  .hero-content h1 {
-    font-size: 2.2rem;
-  }
-
-  .hero-content h2 {
-    font-size: 1.5rem;
-  }
-
   .hero-container {
-    flex-direction: column-reverse;
-    align-items: center;
+    flex-direction: column-reverse; /* Stack content below image on smaller screens */
     text-align: center;
   }
 
+  .hero-content {
+    align-items: center;
+    margin-top: 3rem; /* Space between image and content */
+  }
+
+  .hero-title {
+    font-size: clamp(2.5rem, 8vw, 4.5rem);
+  }
+
+  .hero-subtitle {
+    font-size: clamp(1.5rem, 5vw, 2.5rem);
+  }
+
+  .hero-description {
+    font-size: clamp(0.95rem, 2.5vw, 1.1rem);
+    margin-left: auto;
+    margin-right: auto;
+  }
+
   .hero-buttons {
+    justify-content: center;
+    flex-direction: row; /* Keep buttons in a row even if stacked vertically */
+  }
+
+  .social-links {
     justify-content: center;
   }
 
   .hero-image-wrapper {
     margin-bottom: 2rem;
+  }
+
+  .hero-image {
+    max-width: 300px; /* Adjust image size for smaller screens */
+  }
+}
+
+@media (max-width: 600px) {
+  .hero-section {
+    padding: 4rem 1rem;
+  }
+
+  .hero-title {
+    font-size: 2.5rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1.5rem;
+  }
+
+  .btn {
+    padding: 0.8rem 1.5rem;
+    font-size: 0.95rem;
+    flex-grow: 1; /* Allow buttons to grow and fill space */
+  }
+
+  .social-icon {
+    font-size: 1.5rem;
+  }
+
+  .hero-image {
+    max-width: 250px;
+  }
+}
+
+@media (max-width: 400px) {
+  .hero-section {
+    padding: 3rem 0.5rem;
+  }
+
+  .hero-title {
+    font-size: 2rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1.2rem;
+  }
+
+  .hero-description {
+    font-size: 0.9rem;
+  }
+
+  .hero-buttons {
+    flex-direction: column; /* Stack buttons on very small screens */
+    gap: 0.8rem;
+  }
+
+  .hero-image {
+    max-width: 200px;
   }
 }

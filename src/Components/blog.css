@@ -1,73 +1,183 @@
-/* Blog.css  ─ styles for the <Blog /> component  */
-#blog {
-    /* A soft-gradient header band */
-    background: radial-gradient(
-        circle at 15% 15%,
-        rgba(97, 218, 251, 0.15),
-        transparent 55%
-      ),
-      #f7f9fc;
+/* blog.css */
+
+/* Blog Section General Styles */
+.blog-section {
+  background: #fdfefe; /* Very light background */
+  padding: 6rem 1.5rem;
+  font-family: 'Inter', sans-serif;
+  color: #333;
+}
+
+.blog-section .container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.section-title {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 800;
+  text-align: center;
+  margin-bottom: 4rem;
+  color: #1a202c;
+  background: linear-gradient(45deg, #0a527c, #007bff);
+
+  -webkit-text-fill-color: transparent;
+  animation: fadeInDown 1s ease-out;
+}
+
+/* Blog Grid Layout */
+.blog-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2.5rem;
+}
+
+/* Blog Card Styles */
+.blog-card {
+  background: #ffffff;
+  border-radius: 1.25rem; /* More rounded corners */
+  padding: 2.5rem;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08); /* Softer, larger shadow */
+  transition: all 0.4s cubic-bezier(0.2, 0.8, 0.2, 1); /* Smooth transition */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border: 1px solid rgba(0, 123, 255, 0.05); /* Subtle border */
+  animation: fadeInUp 0.8s ease-out forwards; /* Fade in animation */
+}
+
+/* Animation delays for staggered effect */
+.blog-card:nth-child(1) { animation-delay: 0.1s; }
+.blog-card:nth-child(2) { animation-delay: 0.2s; }
+.blog-card:nth-child(3) { animation-delay: 0.3s; }
+.blog-card:nth-child(4) { animation-delay: 0.4s; }
+
+
+.blog-card:hover {
+  transform: translateY(-10px) scale(1.02); /* Lift and slightly enlarge */
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15); /* More prominent shadow on hover */
+  border-color: rgba(0, 123, 255, 0.3); /* Blue border on hover */
+}
+
+.blog-title {
+  font-size: clamp(1.4rem, 2.5vw, 1.8rem);
+  font-weight: 700;
+  margin-top: 0;
+  margin-bottom: 1rem;
+  color: #0a527c;
+  line-height: 1.3;
+}
+
+.blog-excerpt {
+  font-size: clamp(1rem, 1.8vw, 1.15rem);
+  line-height: 1.7;
+  color: #555;
+  margin-bottom: 1.5rem;
+  flex-grow: 1; /* Allows content to push button to bottom */
+}
+
+.read-more-btn {
+  display: inline-block;
+  background: linear-gradient(45deg, #007bff, #0a527c);
+  color: white;
+  padding: 0.8rem 1.5rem;
+  border-radius: 0.75rem;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+  align-self: flex-start; /* Align button to start of card */
+}
+
+.read-more-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(0, 123, 255, 0.4);
+  background: linear-gradient(45deg, #0a527c, #0056b3);
+}
+
+/* Animations */
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+/* Responsive Design */
+@media (max-width: 992px) {
+  .blog-grid {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+  }
+  .blog-card {
+    padding: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .blog-section {
     padding: 4rem 1rem;
-    color: #2d3748;            /* Dark slate text for good contrast */
-    font-family: "Inter", "Segoe UI", Roboto, sans-serif;
   }
-  
-  #blog .container {
-    max-width: 960px;
-    margin: 0 auto;
+  .section-title {
+    font-size: 3rem;
+    margin-bottom: 3rem;
   }
-  
-  #blog .content {
-    display: flex;
-    flex-direction: column;
-    gap: 2.5rem;
+  .blog-grid {
+    gap: 1.5rem;
   }
-  
-  #blog h1 {
-    font-size: clamp(2rem, 4.5vw, 3rem);
-    font-weight: 700;
-    text-align: center;
-    margin-bottom: 1rem;
-    color: #0b4b6e;            /* Subtle React-blue heading */
+  .blog-card {
+    padding: 1.5rem;
   }
-  
-  /* --- Article cards --- */
-  #blog article {
-    background: #ffffff;
-    border-radius: 1rem;
-    padding: 2rem 1.75rem;
-    box-shadow: 0 10px 25px -8px rgba(0, 0, 0, 0.12);
-    transition: transform 0.25s ease, box-shadow 0.25s ease;
+  .blog-title {
+    font-size: 1.6rem;
   }
-  
-  #blog article:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 14px 30px -6px rgba(0, 0, 0, 0.18);
-  }
-  
-  #blog article h3 {
-    margin-top: 0;
-    margin-bottom: 0.75rem;
-    font-size: 1.375rem;
-    line-height: 1.25;
-    color: #0f6ba8;
-  }
-  
-  #blog article p {
-    margin: 0;
-    line-height: 1.6;
+  .blog-excerpt {
     font-size: 1rem;
-    letter-spacing: 0.01rem;
   }
-  
-  /* --- Responsiveness — single tweak does the job --- */
-  @media (max-width: 600px) {
-    #blog {
-      padding: 3rem 1rem;
-    }
-  
-    #blog article {
-      padding: 1.5rem 1.25rem;
-    }
+  .read-more-btn {
+    padding: 0.7rem 1.2rem;
+    font-size: 0.9rem;
   }
-  
+}
+
+@media (max-width: 480px) {
+  .blog-section {
+    padding: 3rem 0.5rem;
+  }
+  .section-title {
+    font-size: 2rem;
+    margin-bottom: 2.5rem;
+  }
+  .blog-grid {
+    grid-template-columns: 1fr; /* Stack cards on very small screens */
+    gap: 1.25rem;
+  }
+  .blog-card {
+    padding: 1.25rem;
+    border-radius: 1rem;
+  }
+  .blog-title {
+    font-size: 1.3rem;
+    margin-bottom: 0.8rem;
+  }
+  .blog-excerpt {
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+  }
+}

@@ -1,71 +1,157 @@
+/* bookForm.css */
 
-
+/* Book Form Container */
 .book-form {
-    background-color: #ffffff;
+  background-color: #ffffff;
+  padding: 2.5rem;
+  margin-bottom: 2.5rem;
+  border-radius: 1rem; /* Slightly more rounded */
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1); /* Softer, larger shadow */
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem; /* Increased spacing */
+  max-width: 650px; /* Wider form */
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+  animation: fadeInScale 0.5s ease-out; /* Add animation */
+}
+
+/* Form Heading */
+.book-form .form-title {
+  font-size: 1.8rem; /* Larger title */
+  color: #2c3e50;
+  margin-bottom: 1rem; /* More space below title */
+  text-align: center;
+  font-weight: 700;
+}
+
+/* Form Group for Label and Input */
+.book-form .form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem; /* Space between label and input */
+}
+
+.book-form .form-group label {
+  font-size: 0.95rem;
+  color: #34495e;
+  font-weight: 600;
+  text-align: left; /* Align labels to the left */
+}
+
+/* Input, Select, Textarea */
+.book-form input,
+.book-form select,
+.book-form textarea {
+  padding: 0.9rem 1.2rem; /* More padding */
+  border: 1px solid #d1d9e6; /* Softer border color */
+  border-radius: 0.75rem; /* More rounded inputs */
+  font-size: 1rem;
+  font-family: inherit;
+  width: 100%;
+  box-sizing: border-box;
+  background-color: #f8faff; /* Light background for inputs */
+  color: #333;
+  transition: all 0.3s ease; /* Smooth transition for all properties */
+}
+
+/* Placeholder styling */
+.book-form input::placeholder,
+.book-form textarea::placeholder {
+  color: #95a5a6;
+  font-style: italic;
+}
+
+/* Focus State */
+.book-form input:focus,
+.book-form select:focus,
+.book-form textarea:focus {
+  border-color: #4CAF50; /* Green highlight on focus */
+  box-shadow: 0 0 0 4px rgba(76, 175, 80, 0.2); /* Soft glow */
+  outline: none;
+  background-color: #ffffff; /* White background on focus */
+}
+
+/* Textarea */
+.book-form textarea {
+  resize: vertical;
+  min-height: 120px; /* Taller textarea */
+}
+
+/* Button */
+.book-form .submit-btn {
+  background-color: #4CAF50; /* Green button */
+  color: white;
+  padding: 1rem 1.5rem; /* More padding */
+  border: none;
+  border-radius: 0.75rem; /* Rounded button */
+  font-size: 1.1rem; /* Larger font */
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  letter-spacing: 0.05em; /* Slight letter spacing */
+  margin-top: 1rem; /* More space above button */
+}
+
+/* Button Hover/Active */
+.book-form .submit-btn:hover {
+  background-color: #45a049; /* Darker green on hover */
+  transform: translateY(-3px); /* Lift effect */
+  box-shadow: 0 8px 15px rgba(76, 175, 80, 0.3); /* Shadow on hover */
+}
+
+.book-form .submit-btn:active {
+  transform: translateY(0); /* Press down effect */
+  box-shadow: 0 2px 5px rgba(76, 175, 80, 0.2);
+}
+
+/* Animation Keyframes */
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Responsive: Small Devices */
+@media (max-width: 600px) {
+  .book-form {
     padding: 1.5rem;
-    margin-bottom: 2rem;
-    border-radius: 0.75rem;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-    display: flex;
-    flex-direction: column;
     gap: 1rem;
-    max-width: 600px;
-    margin-left: auto;
-    margin-right: auto;
+    margin-bottom: 1.5rem;
   }
-  
-  .book-form h2 {
+
+  .book-form .form-title {
     font-size: 1.5rem;
-    color: #1f2937;
-    margin-bottom: 0.5rem;
-    text-align: center;
+    margin-bottom: 0.8rem;
   }
-  
+
   .book-form input,
   .book-form select,
+  .book-form textarea,
+  .book-form .submit-btn {
+    font-size: 0.95rem;
+    padding: 0.75rem 1rem;
+  }
+
   .book-form textarea {
-    padding: 0.75rem;
-    border: 1px solid #d1d5db;
-    border-radius: 0.5rem;
-    font-size: 1rem;
-    width: 100%;
-    box-sizing: border-box;
+    min-height: 100px;
   }
-  
-  .book-form textarea {
-    resize: vertical;
-    min-height: 80px;
+
+  .book-form .submit-btn {
+    margin-top: 0.8rem;
   }
-  
-  .book-form button {
-    background-color: #3b82f6;
-    color: white;
-    padding: 0.75rem;
-    border: none;
-    border-radius: 0.5rem;
-    font-size: 1rem;
-    cursor: pointer;
-    transition: background-color 0.2s;
+}
+
+@media (max-width: 400px) {
+  .book-form {
+    padding: 1rem;
   }
-  
-  .book-form button:hover {
-    background-color: #2563eb;
-  }
-  
-  @media (max-width: 500px) {
-    .book-form {
-      padding: 1rem;
-    }
-  
-    .book-form h2 {
-      font-size: 1.25rem;
-    }
-  
-    .book-form input,
-    .book-form select,
-    .book-form textarea,
-    .book-form button {
-      font-size: 0.95rem;
-    }
-  }
-  
+}

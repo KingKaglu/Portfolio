@@ -1,28 +1,49 @@
 import './App.css';
-import Nav from './Components/nav.jsx';
-import Hero from './Components/hero.jsx';
-import About from './Components/About'; // Capital A!
-import Contact from './Components/contact.jsx';
-import Portfolio from './Components/portfolio.jsx';
-import Blog from './Components/blog.jsx';
-import TodoList from './Components/todo.jsx';
+import './index.css';
 
+import Nav from './Components/Nav.jsx';
+import Hero from './Components/Hero.jsx';
+import About from './Components/About.jsx';
+import Contact from './Components/Contact.jsx';
+import Portfolio from './Components/Portfolio.jsx';
+import Blog from './Components/Blog.jsx';
+import TodoList from './Components/Todo.jsx';
 import BookManager from './Components/BookManager.jsx';
-
-
 
 function App() {
   return (
     <>
-    <title>Giorgi Gzirishvili</title>
       <Nav />
-      <Hero />
-      <About />
-      <Portfolio />
-      <TodoList/>
-      <BookManager/>
-      <Blog />
-      <Contact/>
+
+      <main className="pt-24 px-4 md:px-8 space-y-20">
+        <section id="home">
+          <Hero />
+        </section>
+
+        <section id="about">
+          <About />
+        </section>
+
+        <section id="portfolio">
+          <Portfolio />
+        </section>
+
+        <section>
+          <TodoList />
+        </section>
+
+        <section>
+          <BookManager />
+        </section>
+
+        <section id="blog">
+          <Blog />
+        </section>
+
+        <section id="contact">
+          <Contact />
+        </section>
+      </main>
     </>
   );
 }

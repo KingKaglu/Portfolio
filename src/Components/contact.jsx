@@ -1,3 +1,4 @@
+// contact.jsx
 import "./contact.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEnvelope, faPhone } from "@fortawesome/free-solid-svg-icons";
@@ -5,43 +6,65 @@ import {
   faFacebookF,
   faTwitter,
   faLinkedinIn,
-  faInstagram
-} from '@fortawesome/free-brands-svg-icons';
+  faInstagram,
+  faGithub,
+} from "@fortawesome/free-brands-svg-icons";
 function Contact() {
   return (
-    <section id="contact" className="contact">
+    <section id="contact" className="contact-section">
       <div className="container">
         <div className="content">
-          <h1>Contact Me</h1>
-          <p>
-            I'm open to freelance work, collaborations, or just a friendly
-            hello. Feel free to reach out!
+          <h1 className="contact-title">Get In Touch</h1>
+          <p className="contact-description">
+            I'm currently open to new freelance opportunities, collaborations, or just a friendly chat.
+            Feel free to reach out through any of the channels below!
           </p>
-          <div className="contact-info">
+          <div className="contact-info-grid">
             <a
               href="mailto:gzirishviligiorgiwork@gmail.com"
-              className="contact-item"
+              className="contact-item email"
             >
               <FontAwesomeIcon icon={faEnvelope} className="contact-icon" />
-              gzirishviligiorgiwork@gmail.com
+              <span>gzirishviligiorgiwork@gmail.com</span>
             </a>
-            <a href="tel:+995599213180" className="contact-item">
+            <a href="tel:+995599213180" className="contact-item phone">
               <FontAwesomeIcon icon={faPhone} className="contact-icon" />
-              +995 599 21 31 80
+              <span>+995 599 21 31 80</span>
             </a>
           </div>
-          <div className="social">
-            <a href="https://www.facebook.com/giorgi.gzirishvili.168992/" className="social-icon">
+          <div className="social-links">
+            <a
+              href="https://www.facebook.com/giorgi.gzirishvili.168992/"
+              className="social-icon"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Facebook"
+            >
               <FontAwesomeIcon icon={faFacebookF} />
             </a>
-            <a href="#" className="social-icon">
+            <a href="https://twitter.com/yourusername" className="social-icon" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
               <FontAwesomeIcon icon={faTwitter} />
             </a>
-            <a href="#" className="social-icon">
+            <a href="https://linkedin.com/in/yourusername" className="social-icon" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
               <FontAwesomeIcon icon={faLinkedinIn} />
             </a>
-            <a href="https://www.instagram.com/giorgigzirshvili/" className="social-icon">
+            <a
+              href="https://www.instagram.com/giorgigzirshvili/"
+              className="social-icon"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Instagram"
+            >
               <FontAwesomeIcon icon={faInstagram} />
+            </a>
+            <a
+              href="https://github.com/yourusername"
+              className="social-icon"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="GitHub"
+            >
+              <FontAwesomeIcon icon={faGithub} />
             </a>
           </div>
         </div>
