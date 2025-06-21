@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/GiorgiGzirishvili/Portfolio.git"
+    "url": "https://github.com/KingKaglu/Portfolio.git"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.7.2",
@@ -28,4 +28,3 @@
     "tailwindcss": "^3.4.17",
     "vite": "^6.3.5"
   }
-}
