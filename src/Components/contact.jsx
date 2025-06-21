@@ -58,7 +58,7 @@ function Contact() {
               <FontAwesomeIcon icon={faInstagram} />
             </a>
             <a
-              href="https://github.com/yourusername"
+              href="https://github.com/KingKaglu"
               className="social-icon"
               target="_blank"
               rel="noopener noreferrer"

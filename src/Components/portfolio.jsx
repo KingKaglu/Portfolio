@@ -25,7 +25,7 @@ function Portfolio() {
           </p>
 
           <a
-            href="https://github.com/yourusername" // Remember to replace 'yourusername' with Giorgi's actual GitHub username!
+            href="https://github.com/KingKaglu" // Remember to replace 'yourusername' with Giorgi's actual GitHub username!
             className="inline-flex items-center px-8 py-4 bg-blue-600 hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600
                        text-white text-xl font-semibold rounded-lg shadow-lg
                        transform transition-all duration-300 ease-in-out
